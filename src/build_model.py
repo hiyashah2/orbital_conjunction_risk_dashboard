@@ -9,7 +9,11 @@ headers = {
 }
 
 print("Requesting data from Celestrak...")
-response = requests.get(url, headers=headers)
+print("Reading local orbital data snapshot...")
+with open("celestrak_data.txt", "r", encoding="utf-8") as f:
+    # Ensure your parsing code reads from this new variable 
+    # instead of response.text
+    raw_data = f.read()
 
 if response.status_code == 200:
     with open("data/oneweb.tle", "w") as f:
