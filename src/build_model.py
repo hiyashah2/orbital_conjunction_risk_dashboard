@@ -8,19 +8,15 @@ headers = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 }
 
-print("Requesting data from Celestrak...")
 print("Reading local orbital data snapshot...")
 with open("celestrak_data.txt", "r", encoding="utf-8") as f:
-    # Ensure your parsing code reads from this new variable 
-    # instead of response.text
     raw_data = f.read()
 
-if response.status_code == 200:
-    with open("data/oneweb.tle", "w") as f:
-        f.write(response.text)
-    print("Download complete.")
-else:
-    print(f"Download failed with status code: {response.status_code}")
+# Save the local snapshot directly to the file Skyfield expects
+with open("data/oneweb.tle", "w", encoding="utf-8") as f:
+    f.write(raw_data)
+    
+print("Local data loaded successfully.")
 
 satellites = load.tle_file("data/oneweb.tle")
 print(f"Loaded {len(satellites)} objects")
