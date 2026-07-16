@@ -85,13 +85,6 @@ This is a portfolio/educational-scale implementation, and it's worth being upfro
 - Add relative velocity at closest approach as a second risk factor alongside distance
 - Validate flagged events against publicly documented real conjunction cases
 
-## Part of a broader portfolio
-
-This is the second of three projects mapping the business, operations, and science sides of the space industry:
-
-1. [Indian NewSpace Market Intelligence Dashboard](https://github.com/hiyashah2/indian-newspace-market-intelligence) — business/market analysis
-2. **Orbital Conjunction Risk Dashboard** (this project) — Space Situational Awareness / operations
-3. Exoplanet Detection & Vetting Pipeline (in progress) — space/science data analysis
 
 ## Author
 
